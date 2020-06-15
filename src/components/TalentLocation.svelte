@@ -1,5 +1,5 @@
 <style>
-    .location {
+    /* .location {
         display: grid;
         grid-template:
             "icon text" 1fr
@@ -31,7 +31,7 @@
         grid-area: info;
         color: rgb(33, 164, 83);
         font-size: 0.875rem;
-    }
+    } */
 </style>
 
 <script>

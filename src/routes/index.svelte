@@ -1,6 +1,6 @@
 <style>
     /* ========================== Filters ========================== */
-    .form {
+    /* .form {
         margin: 2rem 0;
     }
 
@@ -35,10 +35,10 @@
         font-size: 1rem;
         font-weight: 500;
         color: rgb(0, 0, 0);
-    }
+    } */
 
     /* ========================== Talent List ========================== */
-    .talent-list {
+    /* .talent-list {
         list-style: none;
         margin: 0;
         padding: 0;
@@ -108,7 +108,7 @@
         .talent-list {
             grid-template: auto / repeat(4, 1fr);
         }
-    }
+    } */
 </style>
 
 <script context="module">
