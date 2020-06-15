@@ -1,5 +1,5 @@
 <style>
-    .container {
+    /* .container {
         background-color: #eeeeee;
         color: rgb(0, 0, 0);
         display: flex;
@@ -34,7 +34,7 @@
         padding-right: 12px;
         pointer-events: none;
         color: rgb(0, 0, 0);
-    }
+    } */
 </style>
 
 <script>

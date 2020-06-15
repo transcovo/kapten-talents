@@ -1,5 +1,5 @@
 <style>
-    .link {
+    /* .link {
         display: flex;
         align-items: center;
         justify-content: flex-start;
@@ -16,7 +16,7 @@
     }
     .link__arrow {
         margin-left: 1rem;
-    }
+    } */
 </style>
 
 <script>
