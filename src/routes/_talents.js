@@ -10,15 +10,13 @@ const talents = [
         isOpenToRemoteWork: false,
         isOpenToRelocation: false,
         introduction:
-            "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+            "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
         location: {
             key: "france/paris",
             label: "Paris",
         },
-        linkedin:
-            "https://www.linkedin.com/in/boulangertristan/?originalSubdomain=fr",
-        resume:
-            "https://www.linkedin.com/in/boulangertristan/?originalSubdomain=fr",
+        github: "https://github.com/TristanBlg",
+        personalWebsite: "https://www.google.com/",
     },
     {
         id: "grewejibfwejggfihuewe",
@@ -31,7 +29,7 @@ const talents = [
         isOpenToRemoteWork: false,
         isOpenToRelocation: true,
         introduction:
-            "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+            "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
         location: {
             key: "france/paris",
             label: "Paris",
@@ -40,6 +38,7 @@ const talents = [
             "https://www.linkedin.com/in/boulangertristan/?originalSubdomain=fr",
         resume:
             "https://www.linkedin.com/in/boulangertristan/?originalSubdomain=fr",
+        personalWebsite: "https://www.google.com/",
     },
     {
         id: "grewjibffwewfgeewejggfihuewe",
@@ -59,8 +58,7 @@ const talents = [
         },
         linkedin:
             "https://www.linkedin.com/in/boulangertristan/?originalSubdomain=fr",
-        resume:
-            "https://www.linkedin.com/in/boulangertristan/?originalSubdomain=fr",
+        github: "https://github.com/TristanBlg",
     },
     {
         id: "grewjibfwejggfihuewfwe",
@@ -85,6 +83,7 @@ const talents = [
             "https://www.linkedin.com/in/boulangertristan/?originalSubdomain=fr",
         resume:
             "https://www.linkedin.com/in/boulangertristan/?originalSubdomain=fr",
+        personalWebsite: "https://www.google.com/",
     },
     {
         id: "ewfgrewjibfwejggfihuewe",
@@ -106,6 +105,8 @@ const talents = [
             "https://www.linkedin.com/in/boulangertristan/?originalSubdomain=fr",
         resume:
             "https://www.linkedin.com/in/boulangertristan/?originalSubdomain=fr",
+        github: "https://github.com/TristanBlg",
+        personalWebsite: "https://www.google.com/",
     },
     {
         id: "grewjibffwejggfihuewe",
@@ -127,6 +128,7 @@ const talents = [
             "https://www.linkedin.com/in/boulangertristan/?originalSubdomain=fr",
         resume:
             "https://www.linkedin.com/in/boulangertristan/?originalSubdomain=fr",
+        github: "https://github.com/TristanBlg",
     },
     {
         id: "grfewewjibfwejggfihuewe",
@@ -138,16 +140,14 @@ const talents = [
         tags: ["Frontend", "Engineering"],
         isOpenToRemoteWork: true,
         isOpenToRelocation: false,
-        introduction:
-            "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
         location: {
             key: "france/paris",
             label: "Paris",
         },
         linkedin:
             "https://www.linkedin.com/in/boulangertristan/?originalSubdomain=fr",
-        resume:
-            "https://www.linkedin.com/in/boulangertristan/?originalSubdomain=fr",
+        github: "https://github.com/TristanBlg",
+        personalWebsite: "https://www.google.com/",
     },
     {
         id: "grewjibfwejgfewgfihuewe",
@@ -159,16 +159,13 @@ const talents = [
         tags: ["Frontend", "Engineering"],
         isOpenToRemoteWork: true,
         isOpenToRelocation: true,
-        introduction:
-            "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
         location: {
             key: "england/london",
             label: "London",
         },
-        linkedin:
-            "https://www.linkedin.com/in/boulangertristan/?originalSubdomain=fr",
         resume:
             "https://www.linkedin.com/in/boulangertristan/?originalSubdomain=fr",
+        github: "https://github.com/TristanBlg",
     },
     {
         id: "hklaugofegwiufuew",
