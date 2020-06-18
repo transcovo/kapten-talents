@@ -18,6 +18,24 @@ Open up [localhost:3000](http://localhost:3000) and start clicking around.
 
 Consult [sapper.svelte.dev](https://sapper.svelte.dev) for help getting started.
 
+### Deploying on Google Pages
+
+Run the following command to update the static code in `docs/`:
+
+```shell
+npm run deploy
+```
+
+Then you can check, commit and push:
+
+```shell
+git add docs/
+
+git commit -m "TECH Free the starts"
+
+git push
+```
+
 ## Structure
 
 Sapper expects to find two directories in the root of your project — `src` and `static`.
