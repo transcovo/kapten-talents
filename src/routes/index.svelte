@@ -1,116 +1,3 @@
-<style>
-    /* ========================== Filters ========================== */
-    /* .form {
-        margin: 2rem 0;
-    }
-
-    .form__selects {
-        color: rgb(0, 0, 0);
-        margin-bottom: 1rem;
-    }
-    .form__selects > div {
-        min-width: 320px;
-        display: inline-block;
-        margin-right: 1rem;
-    }
-    .form__selects > div label {
-        margin-bottom: 8px;
-        font-size: 0.875rem;
-        font-weight: 500;
-        display: block;
-        color: rgb(0, 0, 0);
-    }
-
-    .form__checboxes div {
-        display: inline-flex;
-        align-items: center;
-    }
-    .form__checboxes div:not(:last-child) {
-        margin-right: 2rem;
-    }
-    .form__checboxes input {
-        margin: 0 0.5rem 0 0;
-    }
-    .form__checboxes label {
-        font-size: 1rem;
-        font-weight: 500;
-        color: rgb(0, 0, 0);
-    } */
-
-    /* ========================== Talent List ========================== */
-    /* .talent-list {
-        list-style: none;
-        margin: 0;
-        padding: 0;
-        display: grid;
-        grid-template: auto / 1fr;
-        grid-gap: 1rem;
-    }
-
-    .talent-list__item.talent {
-        background-color: rgb(255, 255, 255);
-        box-shadow: rgb(176, 176, 176) 0px 0px 0px 1px inset;
-        color: rgb(0, 0, 0);
-        border-radius: 8px;
-        padding: 24px;
-    }
-    .talent__title {
-        overflow-wrap: break-word;
-        font-size: 24px;
-        line-height: 1.25em;
-        color: inherit;
-        padding-top: 2px;
-        padding-bottom: 2px;
-        font-weight: 700;
-    }
-    .talent__subtitle {
-        line-height: 24px;
-        font-weight: normal;
-        color: #757575;
-        font-size: 18px;
-        margin-bottom: 6px;
-        margin: 0 0 6px;
-    }
-
-    .talent__tags {
-        margin-bottom: 0.5rem;
-    }
-    .talent__tags p {
-        margin-right: 5px;
-        height: 24px;
-        font-size: 12px;
-        border-radius: 12px;
-        color: rgb(51, 51, 51);
-        padding: 2px 12px;
-        background-color: #eeeeee;
-        display: inline-flex;
-        align-items: center;
-        font-weight: 500;
-    }
-
-    .talent__text {
-        font-size: 1rem;
-        color: rgb(84, 84, 84);
-        margin-bottom: 1rem;
-    }
-
-    @media screen and (min-width: 768px) {
-        .talent-list {
-            grid-template: auto / repeat(2, 1fr);
-        }
-    }
-    @media screen and (min-width: 1080px) {
-        .talent-list {
-            grid-template: auto / repeat(3, 1fr);
-        }
-    }
-    @media screen and (min-width: 1440px) {
-        .talent-list {
-            grid-template: auto / repeat(4, 1fr);
-        }
-    } */
-</style>
-
 <script context="module">
     function shuffle(array) {
         let shuffledArray = [...array];
@@ -134,166 +21,608 @@
 </script>
 
 <script>
-    import Select from "../components/Select.svelte";
-    import TalentLink from "../components/TalentLink.svelte";
-    import TalentLocation from "../components/TalentLocation.svelte";
+    import { onMount } from "svelte";
 
-    import GithubIcon from "../components/icons/Github.svelte";
-    import LinkedInIcon from "../components/icons/LinkedIn.svelte";
-    import ResumeIcon from "../components/icons/Resume.svelte";
-    import PersonalWebsiteIcon from "../components/icons/PersonalWebsite.svelte";
+    import Select from "../components/Select.svelte";
+    import Checkbox from "../components/Checkbox.svelte";
+    import TalentCard from "../components/TalentCard.svelte";
 
     export let talents;
 
     let filteredTalents = talents;
 
-    function filterTalents({
-        location,
-        role,
-        isOpenToRelocation,
-        isOpenToRemoteWork
-    }) {
-        filteredTalents = talents.filter(talent => {
-            let isLocationValid = false;
-            let isRoleValid = false;
+    const translations = {
+        allDepartmentsOption: "All Departments",
+        allPositionsOption: "All Positions",
+        allExperiencesOption: "All Experiences"
+    };
 
-            let isReloc = true;
-            let isRemote = true;
+    const allDepartmentsOption = translations.allDepartmentsOption;
+    const allPositionsOption = translations.allPositionsOption;
+    const allExperiencesOption = translations.allExperiencesOption;
 
-            if (location === "all" || location === talent.location.key) {
-                isLocationValid = true;
-            }
-            if (role === "all" || role === talent.role.key) {
-                isRoleValid = true;
-            }
-            if (isOpenToRelocation && !talent.isOpenToRelocation) {
-                isReloc = false;
-            }
-            if (isOpenToRemoteWork && !talent.isOpenToRemoteWork) {
-                isRemote = false;
-            }
+    let positionSelectValue = allPositionsOption;
+    let departmentSelectValue = allDepartmentsOption;
+    let experienceSelectValue = allExperiencesOption;
+    let isOpenToRelocationOrRemoteChecked = false;
 
-            return isLocationValid && isRoleValid && isReloc && isRemote;
+    let windowInnerWidth;
+
+    let filterBar;
+    let header;
+    let isFilterBarActive;
+    let isFilterBarAdditinnalContentVisible;
+    $: isFilterBarAdditinnalContentVisible =
+        isFilterBarActive && windowInnerWidth >= 1180;
+
+    const KPI = {
+        [allDepartmentsOption]: {
+            title: "We’re on fire(d)",
+            description:
+                "We all grew and boosted growth tremendously. For some of us, it’s the end of the journey, but the beginning of yours!  Might just be your best decision of today."
+        },
+        Engineering: {
+            title: "Our Tech team is awesome",
+            description:
+                "Here are some a glimpse of their biggest successes. Discover who they are below 👇",
+            kpi: [
+                {
+                    value: "30",
+                    label: "deployments per day"
+                },
+                {
+                    value: "90%",
+                    label: "average code coverage"
+                },
+                {
+                    value: "3",
+                    label: "countries opened in 8 months"
+                }
+            ]
+        },
+        Product: {
+            title: "Our Product team is astonishing",
+            description:
+                "Here are some a glimpse of their biggest successes. Discover who they are below 👇",
+            kpi: [
+                {
+                    value: "3M",
+                    label: "active users"
+                },
+                {
+                    value: "4.9",
+                    label: "rate on the app store"
+                },
+                {
+                    value: "45s",
+                    label: "median time to order a ride"
+                }
+            ]
+        },
+        "Customer Service": {
+            title: "Our Customer Service is amazing",
+            description:
+                "Here are some a glimpse of their biggest successes. Discover who they are below 👇",
+            kpi: [
+                {
+                    value: "85%",
+                    label: "of customer satisfaction"
+                },
+                {
+                    value: "50%",
+                    label: "complaints handled in < 1 h"
+                },
+                {
+                    value: "1st",
+                    label: "2019 customer service"
+                }
+            ]
+        },
+        Operations: {
+            title: "Our Operations team is extraordinary",
+            description:
+                "Here are some a glimpse of their biggest successes. Discover who they are below 👇",
+            kpi: [
+                {
+                    value: "3M",
+                    label: "active users"
+                },
+                {
+                    value: "40k",
+                    label: "partnered drivers"
+                },
+                {
+                    value: "6",
+                    label: "european cities"
+                }
+            ]
+        },
+        Marketing: {
+            title: "Our Marketing team is breathtaking",
+            description:
+                "Here are some a glimpse of their biggest successes. Discover who they are below 👇",
+            kpi: [
+                {
+                    value: "3.3M",
+                    label: "app downloads in 2019"
+                },
+                {
+                    value: "3",
+                    label: "countries opened in 8 months"
+                },
+                {
+                    value: "2",
+                    label: "rebrandings in 2 years"
+                }
+            ]
+        },
+        "Human Resources": {
+            title: "Our HR team is incredible",
+            description:
+                "Here are some a glimpse of their biggest successes. Discover who they are below 👇",
+            kpi: [
+                {
+                    value: "200",
+                    label: "hirings in 1 year"
+                },
+                {
+                    value: "20",
+                    label: "nationalities"
+                },
+                {
+                    value: "3",
+                    label: "countries opened in 8 months"
+                }
+            ]
+        }
+    };
+
+    const { EXPERIENCE, DEPARTMENTS } = getOptions(talents);
+
+    let positionOptions;
+    let activeKPI;
+    const departmentOptions = Object.values(DEPARTMENTS);
+    const defaultKPI = KPI[allDepartmentsOption];
+    $: positionOptions = DEPARTMENTS[departmentSelectValue].positions;
+    $: activeKPI = KPI[departmentSelectValue]
+        ? KPI[departmentSelectValue]
+        : defaultKPI;
+
+    $: filterTalents({
+        position: positionSelectValue,
+        department: departmentSelectValue,
+        experience: experienceSelectValue,
+        isOpenToRelocationOrRemote: isOpenToRelocationOrRemoteChecked
+    });
+
+    onMount(() => {
+        let headerObserver;
+
+        headerObserver = new IntersectionObserver(handleIntersect);
+        headerObserver.observe(header);
+    });
+
+    function handleIntersect(entries) {
+        entries.forEach(entry => {
+            if (entry.target === header) {
+                isFilterBarActive = !entry.isIntersecting;
+            }
         });
     }
 
-    let location = "all";
-    let role = "all";
-    let isOpenToRelocation = false;
-    let isOpenToRemoteWork = false;
+    function stringToObjectKey(string) {
+        return string.toLowerCase().replace(/(\s)|(')/g, "-");
+    }
 
-    $: filterTalents({
-        location,
-        role,
-        isOpenToRelocation,
-        isOpenToRemoteWork
-    });
+    function getOptions(data) {
+        const { experiences, departments } = data.reduce(
+            (acc, { experience, department, position }) => {
+                // EXPERIENCE ==========
+                if (!acc.experiences.includes(experience)) {
+                    acc.experiences.push(experience);
+                }
+
+                // DEPARTMENTS ==========
+                if (!acc.departments[department]) {
+                    acc.departments[department] = {
+                        label: department,
+                        positions: []
+                    };
+                }
+                if (
+                    !acc.departments[allDepartmentsOption].positions.includes(
+                        position
+                    )
+                ) {
+                    acc.departments[allDepartmentsOption].positions.push(
+                        position
+                    );
+                }
+                if (!acc.departments[department].positions.includes(position)) {
+                    acc.departments[department].positions.push(position);
+                }
+
+                return acc;
+            },
+            {
+                experiences: [],
+                departments: {
+                    [allDepartmentsOption]: {
+                        label: translations.allDepartmentsOption,
+                        positions: []
+                    }
+                }
+            }
+        );
+
+        return {
+            EXPERIENCE: experiences.sort(),
+            DEPARTMENTS: departments
+        };
+    }
+
+    function filterTalents({
+        position,
+        department,
+        experience,
+        isOpenToRelocationOrRemote
+    }) {
+        filteredTalents = talents.filter(talent => {
+            let isPositionValid = false;
+            let isDepartmentValid = false;
+            let isXPValid = false;
+            let isOpenToRelocationOrRemoteValid = true;
+
+            if (
+                position === allPositionsOption ||
+                position === talent.position
+            ) {
+                isPositionValid = true;
+            }
+            if (
+                department === allDepartmentsOption ||
+                department === talent.department
+            ) {
+                isDepartmentValid = true;
+            }
+            if (
+                experience === allExperiencesOption ||
+                experience === talent.experience
+            ) {
+                isXPValid = true;
+            }
+            if (
+                isOpenToRelocationOrRemote &&
+                !talent.isOpenToRelocationOrRemote
+            ) {
+                isOpenToRelocationOrRemoteValid = false;
+            }
+
+            return (
+                isPositionValid &&
+                isDepartmentValid &&
+                isXPValid &&
+                isOpenToRelocationOrRemoteValid
+            );
+        });
+    }
+
+    function handleResetPosition() {
+        positionSelectValue = allPositionsOption;
+    }
 </script>
+
+<svelte:window bind:innerWidth="{windowInnerWidth}" />
 
 <svelte:head>
     <title>Kapten's Talent Directory</title>
     <meta name="description" content="Their talent helped move the world" />
 </svelte:head>
 
-<!-- ========================================== Page Title ========================================== -->
-<!-- <h1></h1>
-<h2></h2> -->
+<div class="banner" bind:this="{header}">
+    <img
+        class="banner__logo logo logo--banner"
+        src="logo-white.svg"
+        alt="Kapten"
+    />
 
-<!-- ========================================== Filters ========================================== -->
-<form class="form">
-    <div class="form__selects">
-        <div>
-            <label for="location">Locations</label>
-            <Select bind:value="{location}" name="location" id="location">
-                <option value="all">All locations</option>
-                <option value="france/paris">Paris</option>
-                <option value="england/london">London</option>
+    <div class="banner__info info">
+        <div class="info__block info__block--department department">
+            <h1 class="department__title underscore">{activeKPI.title}</h1>
+            <p class="department__description">{activeKPI.description}</p>
+            {#if activeKPI.kpi}
+                <div class="department__achievements">
+                    {#each activeKPI.kpi as kpi}
+                        <div class="achievement">
+                            <p class="achievement__number">{kpi.value}</p>
+                            <p class="achievement__text">{kpi.label}</p>
+                        </div>
+                    {/each}
+                </div>
+            {/if}
+
+        </div>
+
+        <form class="info__block info__block--form form">
+            <div class="form__selects">
+                <Select
+                    bind:value="{departmentSelectValue}"
+                    name="department"
+                    id="department"
+                    label="Department"
+                    on:change="{handleResetPosition}"
+                >
+                    {#each departmentOptions as option (option.label)}
+                        <option value="{option.label}">{option.label}</option>
+                    {/each}
+                </Select>
+
+                <Select
+                    bind:value="{positionSelectValue}"
+                    name="position"
+                    id="position"
+                    label="Position"
+                >
+                    <option value="{allPositionsOption}">
+                        {translations.allPositionsOption}
+                    </option>
+                    {#each positionOptions as option (option)}
+                        <option value="{option}">{option}</option>
+                    {/each}
+                </Select>
+            </div>
+        </form>
+    </div>
+</div>
+
+<form
+    class="filter-bar form"
+    class:active="{isFilterBarActive}"
+    bind:this="{filterBar}"
+>
+    <div class="filter-bar__block filter-bar__block--start">
+        {#if isFilterBarAdditinnalContentVisible}
+            <img class="logo logo--filter-bar" src="logo.svg" alt="Kapten" />
+
+            <div class="select">
+                <Select
+                    bind:value="{departmentSelectValue}"
+                    name="department"
+                    id="department"
+                    on:change="{handleResetPosition}"
+                >
+                    {#each departmentOptions as option (option.label)}
+                        <option value="{option.label}">{option.label}</option>
+                    {/each}
+                </Select>
+            </div>
+            <div class="select">
+                <Select
+                    bind:value="{positionSelectValue}"
+                    name="position"
+                    id="position"
+                >
+                    <option value="{allPositionsOption}">
+                        {translations.allPositionsOption}
+                    </option>
+                    {#each positionOptions as option (option)}
+                        <option value="{option}">{option}</option>
+                    {/each}
+                </Select>
+            </div>
+        {/if}
+
+        <div class="select">
+            <Select
+                bind:value="{experienceSelectValue}"
+                name="experience"
+                id="filter-bar-experience"
+            >
+                <option value="{allExperiencesOption}">
+                    {translations.allExperiencesOption}
+                </option>
+                {#each EXPERIENCE as xp (xp)}
+                    <option value="{xp}">{xp}</option>
+                {/each}
             </Select>
         </div>
 
-        <div>
-            <label for="role">Role/Skills</label>
-            <Select bind:value="{role}" name="role" id="role">
-                <option value="all">All Role/Skills</option>
-                <option value="developer/frontend">Frontend Developer</option>
-                <option value="developer/backend">Backend Developer</option>
-                <option value="human-ressource">Human Ressource</option>
-                <option value="developer/android">Android Developer</option>
-                <option value="developer/ios">iOs Developer</option>
-            </Select>
-        </div>
     </div>
 
-    <div class="form__checboxes">
-        <div>
-            <input
-                type="checkbox"
-                id="relocation"
-                name="relocation"
-                value="relocation"
-                bind:checked="{isOpenToRelocation}"
-            />
-            <label for="relocation">open to relocation</label>
-        </div>
-
-        <div>
-            <input
-                type="checkbox"
-                id="remote-work"
-                name="remote"
-                value="remote"
-                bind:checked="{isOpenToRemoteWork}"
-            />
-            <label for="remote-work">open to remote work</label>
-        </div>
+    <div class="filter-bar__block filter-bar__block--end">
+        <Checkbox
+            id="filter-bar-relocation-or-remote"
+            name="relocation-or-remote"
+            value="relocation-or-remote"
+            bind:checked="{isOpenToRelocationOrRemoteChecked}"
+            label="open to relocation or remote"
+        />
     </div>
 </form>
 
-<!-- ========================================== Talent List ========================================== -->
 <ul class="talent-list">
     {#each filteredTalents as talent (talent.id)}
-        <li>
-            <div class="talent-list__item talent">
-                <!-- ========================================== Talent Basic information ========================================== -->
-                <h3 class="talent__title">{talent.fullName}</h3>
-                <p class="talent__subtitle">{talent.role.label}</p>
-                <div class="talent__tags">
-                    {#each talent.tags as tag}
-                        <p>{tag}</p>
-                    {/each}
-                </div>
-                {#if talent.introduction}
-                    <p class="talent__text">{talent.introduction}</p>
-                {/if}
-
-                <!-- ========================================== Talent Location ========================================== -->
-                <TalentLocation {talent} />
-
-                <!-- ========================================== Talent Links ========================================== -->
-                {#if talent.linkedin}
-                    <TalentLink href="{talent.linkedin}" name="LinkedIn">
-                        <LinkedInIcon />
-                    </TalentLink>
-                {/if}
-                {#if talent.resume}
-                    <TalentLink href="{talent.resume}" name="Resume">
-                        <ResumeIcon />
-                    </TalentLink>
-                {/if}
-                {#if talent.personalWebsite}
-                    <TalentLink
-                        href="{talent.personalWebsite}"
-                        name="Personal Website"
-                    >
-                        <PersonalWebsiteIcon />
-                    </TalentLink>
-                {/if}
-                {#if talent.github}
-                    <TalentLink href="{talent.github}" name="Github">
-                        <GithubIcon />
-                    </TalentLink>
-                {/if}
-            </div>
-        </li>
+        <TalentCard {talent} />
     {/each}
 </ul>
+
+<style>
+    .underscore::after {
+        content: "_";
+        display: inline-block;
+        font-size: inherit;
+        font-weight: inherit;
+        color: #ff4f71;
+    }
+
+    .logo--filter-bar {
+        width: 6.25rem;
+        margin-right: 1.25rem;
+    }
+    .logo--banner {
+        margin-bottom: 2rem;
+        width: 8rem;
+    }
+
+    .banner {
+        padding: 2rem 1.5rem 5.25rem;
+        background: #002b51 url("wallpaper.svg");
+        color: red;
+    }
+    .banner__logo {
+        margin-bottom: 2rem;
+    }
+    .banner__info.info {
+        display: flex;
+        flex-direction: column;
+    }
+    .info__block--form {
+        margin-top: 2.5rem;
+    }
+    .info__block {
+        width: 100%;
+    }
+    .info__block--form.form {
+        background: #003c72;
+        border-radius: 0.5rem;
+        padding: 1.5rem;
+        align-self: center;
+    }
+    .form__selects {
+        display: grid;
+        grid-template: auto / repeat(1, 1fr);
+        grid-row-gap: 1.5rem;
+    }
+    .info__block--department.department {
+        display: grid;
+        grid-template-rows: repeat(3, auto);
+        grid-row-gap: 1rem;
+        justify-items: center;
+        text-align: center;
+    }
+
+    .department {
+        color: #ffffff;
+    }
+    .department__title {
+        font-style: normal;
+        font-weight: bold;
+        font-size: 2rem;
+    }
+    .department__achievements {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        grid-column-gap: 1rem;
+    }
+
+    .achievement__number {
+        font-style: normal;
+        font-weight: bold;
+        font-size: 2.25rem;
+    }
+    .achievement__text {
+        font-style: normal;
+        font-weight: 500;
+        font-size: 1rem;
+    }
+    .department__description {
+        font-style: normal;
+        font-weight: normal;
+        font-size: 1rem;
+    }
+
+    /* ========================== Filter Bar ========================== */
+    .filter-bar {
+        background: #e2eef7;
+        top: 0;
+        padding: 1.5rem;
+    }
+    .filter-bar__block--start {
+        margin-bottom: 1rem;
+    }
+
+    /* ========================== Talent List ========================== */
+    .talent-list {
+        list-style: none;
+        margin: 0;
+        padding: 1.5rem;
+        display: grid;
+        grid-template: auto / 1fr;
+        grid-gap: 1.5rem 1rem;
+    }
+
+    @media screen and (min-width: 768px) {
+        .banner__info.info {
+            display: flex;
+            flex-direction: row-reverse;
+            align-items: center;
+            justify-content: flex-end;
+        }
+        .info__block--form {
+            margin-right: 4rem;
+            margin-top: 0;
+        }
+        .info__block--department.department {
+            justify-items: stretch;
+            text-align: left;
+        }
+        .filter-bar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .filter-bar__block {
+            display: flex;
+            align-items: center;
+        }
+        .filter-bar__block--start {
+            justify-content: flex-start;
+            margin-bottom: 0;
+        }
+        .filter-bar__block--start .select {
+            margin-right: 1rem;
+            width: 15.625rem;
+        }
+        .filter-bar__block--end {
+            justify-content: flex-end;
+        }
+        .talent-list {
+            grid-template: auto / repeat(2, 1fr);
+        }
+    }
+    @media screen and (min-width: 1180px) {
+        .info__block--form {
+            margin-right: 2rem;
+        }
+        .form__selects {
+            display: grid;
+            grid-template: auto / repeat(2, 1fr);
+            grid-column-gap: 1rem;
+            grid-row-gap: 0;
+        }
+
+        .filter-bar {
+            position: sticky;
+        }
+        .filter-bar.active .select {
+            width: 13.75rem;
+        }
+
+        .talent-list {
+            grid-template: auto / repeat(3, 1fr);
+        }
+    }
+    @media screen and (min-width: 1440px) {
+        .info__block {
+            margin-right: 8rem;
+        }
+
+        .filter-bar.active .select {
+            width: 15.625rem;
+        }
+
+        .talent-list {
+            grid-template: auto / repeat(4, 1fr);
+        }
+    }
+</style>

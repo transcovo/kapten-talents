@@ -1,67 +1,90 @@
-<style>
-    /* .container {
-        background-color: #eeeeee;
-        color: rgb(0, 0, 0);
-        display: flex;
-        position: relative;
-        width: 100%;
-    }
-    .container__select {
-        -webkit-appearance: none;
-        background-color: transparent;
-        color: rgb(0, 0, 0);
-        font-size: 16px;
-        font-weight: 400;
-        height: 48px;
-        padding-left: 12px;
-        padding-right: 36px;
-        width: 100%;
-        border: none;
-        margin: 0px;
-        outline: none;
-    }
-    .container__icon {
-        -webkit-box-pack: center;
-        -webkit-box-align: center;
-        position: absolute;
-        right: 0px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        height: 100%;
-        max-width: 50%;
-        min-width: 36px;
-        padding-right: 12px;
-        pointer-events: none;
-        color: rgb(0, 0, 0);
-    } */
-</style>
-
 <script>
     export let name;
     export let id;
+    export let label;
 
     export let value;
 </script>
 
 <div class="container">
-    <select class="container__select" {name} {id} on:blur bind:value on:change>
-        <slot />
-    </select>
-    <div class="container__icon">
-        <svg
-            viewBox="0 0 18 18"
-            role="presentation"
-            aria-hidden="true"
-            focusable="false"
-            style="height: 16px; width: 16px; display: block; fill: rgb(34, 34,
-            34);"
-        >
-            <path
-                d="m16.29 4.3a1 1 0 1 1 1.41 1.42l-8 8a1 1 0 0 1 -1.41 0l-8-8a1
-                1 0 1 1 1.41-1.42l7.29 7.29z"
-                fill-rule="evenodd"
-            ></path>
-        </svg>
+    {#if label}
+        <label class="label" for="{id}">{label}</label>
+    {/if}
+    <div class="select">
+        <select class="select__tag" {name} {id} on:blur bind:value on:change>
+            <slot />
+        </select>
+        <div class="select__icon">
+            <svg
+                width="10"
+                height="6"
+                viewBox="0 0 10 6"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+            >
+                <path
+                    d="M5.36651 3.70311L8.74865 0.154785C8.95107 -0.0515951
+                    9.27926 -0.0515951 9.48167 0.154785L9.84819 0.528469C10.0506
+                    0.734849 10.0506 1.06946 9.84819 1.27584L5.36651
+                    5.84521C5.16409 6.05159 4.83591 6.05159 4.63349
+                    5.84521L0.151814 1.27584C-0.0506049 1.06946 -0.0506049
+                    0.734849 0.151814 0.528469L0.518325 0.154785C0.720744
+                    -0.0515948 1.04893 -0.0515948 1.25135 0.154785L4.63349
+                    3.70311C4.83591 3.90949 5.16409 3.90949 5.36651 3.70311Z"
+                    fill="#A4ADBA"
+                ></path>
+            </svg>
+
+        </div>
     </div>
 </div>
+
+<style>
+    .container {
+        display: block;
+    }
+    .select {
+        background-color: #ffffff;
+        position: relative;
+        display: flex;
+        width: 100%;
+        color: #002b51;
+    }
+    .select__tag {
+        -webkit-appearance: none;
+        appearance: none;
+        background-color: transparent;
+        font-weight: 400;
+        height: 2.5rem;
+        padding-left: 0.75rem;
+        padding-right: 2.25rem;
+        width: 100%;
+        border: none;
+        margin: 0;
+        outline: none;
+        font-style: normal;
+        font-weight: 500;
+        font-size: 0.875rem;
+    }
+    .select__icon {
+        position: absolute;
+        right: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 100%;
+        max-width: 50%;
+        min-width: 2.25rem;
+        padding-right: 0.75rem;
+        pointer-events: none;
+    }
+
+    .label {
+        display: block;
+        margin-bottom: 0.5rem;
+        font-size: 0.875rem;
+        font-style: normal;
+        font-weight: bold;
+        color: #ffffff;
+    }
+</style>
