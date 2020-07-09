@@ -1,3 +1,11 @@
-<main>
+<div class="container">
     <slot />
-</main>
+</div>
+
+<style>
+    .container {
+        display: flex;
+        flex-direction: column;
+        min-height: 100vh;
+    }
+</style>
