@@ -1,39 +1,3 @@
-<style>
-    /* .location {
-        display: grid;
-        grid-template:
-            "icon text" 1fr
-            "icon info" 1fr
-            / auto 1fr;
-        grid-column-gap: 1rem;
-        margin-bottom: 1rem;
-    }
-    .pin {
-        grid-area: icon;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-    }
-    .pin__container {
-        background-color: #eeeeee;
-        height: 3rem;
-        width: 3rem;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        border-radius: 50%;
-    }
-    .location__text--top {
-        grid-area: text;
-        font-weight: 500;
-    }
-    .location__text--bottom {
-        grid-area: info;
-        color: rgb(33, 164, 83);
-        font-size: 0.875rem;
-    } */
-</style>
-
 <script>
     import LocationIcon from "./icons/Location";
 
@@ -41,19 +5,39 @@
 </script>
 
 <div class="location">
-    <div class="location__pin pin">
-        <div class="pin__container">
-            <LocationIcon />
-        </div>
+    <div class="location__icon">
+        <LocationIcon />
     </div>
-    <p class="location__text location__text--top">{talent.location.label}</p>
-    {#if talent.isOpenToRemoteWork && talent.isOpenToRelocation}
+    <p class="location__text location__text--top">{talent.location}</p>
+    {#if talent.isOpenToRelocationOrRemote}
         <p class="location__text location__text--bottom">
             Open to remote work & relocation
         </p>
-    {:else if talent.isOpenToRemoteWork}
-        <p class="location__text location__text--bottom">Open to remote work</p>
-    {:else if talent.isOpenToRelocation}
-        <p class="location__text location__text--bottom">Open to relocation</p>
     {/if}
 </div>
+
+<style>
+    .location {
+        display: grid;
+        grid-template:
+            "icon text" 1fr
+            "icon info" 1fr
+            / auto 1fr;
+        grid-column-gap: 1rem;
+        margin-bottom: 0.875rem;
+        color: #6c798b;
+        font-size: 0.75rem;
+        font-weight: 500;
+    }
+    .location__icon {
+        line-height: 0;
+        grid-area: icon;
+        align-self: center;
+    }
+    .location__text--top {
+        grid-area: text;
+    }
+    .location__text--bottom {
+        grid-area: info;
+    }
+</style>
