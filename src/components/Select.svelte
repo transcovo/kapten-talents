@@ -2,6 +2,7 @@
     export let name;
     export let id;
     export let label;
+    export let ariaLabel;
 
     export let value;
 </script>
@@ -11,7 +12,15 @@
         <label class="label" for="{id}">{label}</label>
     {/if}
     <div class="select">
-        <select class="select__tag" {name} {id} on:blur bind:value on:change>
+        <select
+            class="select__tag"
+            aria-label="{ariaLabel}"
+            {name}
+            {id}
+            on:blur
+            bind:value
+            on:change
+        >
             <slot />
         </select>
         <div class="select__icon">

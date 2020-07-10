@@ -52,8 +52,8 @@
     let filterBar;
     let header;
     let isFilterBarActive;
-    let isFilterBarAdditinnalContentVisible;
-    $: isFilterBarAdditinnalContentVisible =
+    let isFilterBarAdditionalContentVisible;
+    $: isFilterBarAdditionalContentVisible =
         isFilterBarActive && windowInnerWidth >= 1180;
 
     const KPI = {
@@ -320,136 +320,129 @@
     <meta name="description" content="Their talent helped move the world" />
 </svelte:head>
 
-<header>
-    <div class="banner" bind:this="{header}">
-        <img
-            class="banner__logo logo logo--banner"
-            src="logo-white.svg"
-            alt="Kapten"
-        />
+<div class="banner" bind:this="{header}">
+    <img
+        class="banner__logo logo logo--banner"
+        src="logo-white.svg"
+        alt="Kapten"
+    />
 
-        <div class="banner__info info">
-            <div class="info__block info__block--department department">
-                <h1 class="department__title underscore">{activeKPI.title}</h1>
-                <p class="department__description">{activeKPI.description}</p>
-                {#if activeKPI.kpi}
-                    <div class="department__achievements">
-                        {#each activeKPI.kpi as kpi}
-                            <div class="achievement">
-                                <p class="achievement__number">{kpi.value}</p>
-                                <p class="achievement__text">{kpi.label}</p>
-                            </div>
-                        {/each}
-                    </div>
-                {/if}
-
-            </div>
-
-            <form class="info__block info__block--form form">
-                <div class="form__selects">
-                    <Select
-                        bind:value="{departmentSelectValue}"
-                        name="department"
-                        id="department"
-                        label="Department"
-                        on:change="{handleResetPosition}"
-                    >
-                        {#each departmentOptions as option (option.label)}
-                            <option value="{option.label}">
-                                {option.label}
-                            </option>
-                        {/each}
-                    </Select>
-
-                    <Select
-                        bind:value="{positionSelectValue}"
-                        name="position"
-                        id="position"
-                        label="Position"
-                    >
-                        <option value="{allPositionsOption}">
-                            {translations.allPositionsOption}
-                        </option>
-                        {#each positionOptions as option (option)}
-                            <option value="{option}">{option}</option>
-                        {/each}
-                    </Select>
-                </div>
-            </form>
-        </div>
-    </div>
-
-    <form
-        class="filter-bar form"
-        class:active="{isFilterBarActive}"
-        bind:this="{filterBar}"
-    >
-        <div class="filter-bar__block filter-bar__block--start">
-            {#if isFilterBarAdditinnalContentVisible}
-                <img
-                    class="logo logo--filter-bar"
-                    src="logo.svg"
-                    alt="Kapten"
-                />
-
-                <div class="select">
-                    <Select
-                        bind:value="{departmentSelectValue}"
-                        name="department"
-                        id="department"
-                        on:change="{handleResetPosition}"
-                    >
-                        {#each departmentOptions as option (option.label)}
-                            <option value="{option.label}">
-                                {option.label}
-                            </option>
-                        {/each}
-                    </Select>
-                </div>
-                <div class="select">
-                    <Select
-                        bind:value="{positionSelectValue}"
-                        name="position"
-                        id="position"
-                    >
-                        <option value="{allPositionsOption}">
-                            {translations.allPositionsOption}
-                        </option>
-                        {#each positionOptions as option (option)}
-                            <option value="{option}">{option}</option>
-                        {/each}
-                    </Select>
+    <div class="banner__info info">
+        <div class="info__block info__block--department department">
+            <h1 class="department__title underscore">{activeKPI.title}</h1>
+            <p class="department__description">{activeKPI.description}</p>
+            {#if activeKPI.kpi}
+                <div class="department__achievements">
+                    {#each activeKPI.kpi as kpi}
+                        <div class="achievement">
+                            <p class="achievement__number">{kpi.value}</p>
+                            <p class="achievement__text">{kpi.label}</p>
+                        </div>
+                    {/each}
                 </div>
             {/if}
 
-            <div class="select">
+        </div>
+
+        <form class="info__block info__block--form form">
+            <div class="form__selects">
                 <Select
-                    bind:value="{experienceSelectValue}"
-                    name="experience"
-                    id="filter-bar-experience"
+                    bind:value="{departmentSelectValue}"
+                    name="department"
+                    id="department"
+                    label="Department"
+                    on:change="{handleResetPosition}"
                 >
-                    <option value="{allExperiencesOption}">
-                        {translations.allExperiencesOption}
+                    {#each departmentOptions as option (option.label)}
+                        <option value="{option.label}">{option.label}</option>
+                    {/each}
+                </Select>
+
+                <Select
+                    bind:value="{positionSelectValue}"
+                    name="position"
+                    id="position"
+                    label="Position"
+                >
+                    <option value="{allPositionsOption}">
+                        {translations.allPositionsOption}
                     </option>
-                    {#each EXPERIENCE as xp (xp)}
-                        <option value="{xp}">{xp}</option>
+                    {#each positionOptions as option (option)}
+                        <option value="{option}">{option}</option>
                     {/each}
                 </Select>
             </div>
+        </form>
+    </div>
+</div>
 
+<form
+    class="filter-bar form"
+    class:active="{isFilterBarActive}"
+    bind:this="{filterBar}"
+>
+    <div class="filter-bar__block filter-bar__block--start">
+        {#if isFilterBarAdditionalContentVisible}
+            <img class="logo logo--filter-bar" src="logo.svg" alt="Kapten" />
+
+            <div class="select">
+                <Select
+                    bind:value="{departmentSelectValue}"
+                    name="department"
+                    id="department"
+                    ariaLabel="Department"
+                    on:change="{handleResetPosition}"
+                >
+                    {#each departmentOptions as option (option.label)}
+                        <option value="{option.label}">{option.label}</option>
+                    {/each}
+                </Select>
+            </div>
+            <div class="select">
+                <Select
+                    bind:value="{positionSelectValue}"
+                    name="position"
+                    ariaLabel="Position"
+                    id="position"
+                >
+                    <option value="{allPositionsOption}">
+                        {translations.allPositionsOption}
+                    </option>
+                    {#each positionOptions as option (option)}
+                        <option value="{option}">{option}</option>
+                    {/each}
+                </Select>
+            </div>
+        {/if}
+
+        <div class="select">
+            <Select
+                bind:value="{experienceSelectValue}"
+                name="experience"
+                ariaLabel="Experience"
+                id="filter-bar-experience"
+            >
+                <option value="{allExperiencesOption}">
+                    {translations.allExperiencesOption}
+                </option>
+                {#each EXPERIENCE as xp (xp)}
+                    <option value="{xp}">{xp}</option>
+                {/each}
+            </Select>
         </div>
 
-        <div class="filter-bar__block filter-bar__block--end">
-            <Checkbox
-                id="filter-bar-relocation-or-remote"
-                name="relocation-or-remote"
-                value="relocation-or-remote"
-                bind:checked="{isOpenToRelocationOrRemoteChecked}"
-                label="open to relocation or remote"
-            />
-        </div>
-    </form>
-</header>
+    </div>
+
+    <div class="filter-bar__block filter-bar__block--end">
+        <Checkbox
+            id="filter-bar-relocation-or-remote"
+            name="relocation-or-remote"
+            value="relocation-or-remote"
+            bind:checked="{isOpenToRelocationOrRemoteChecked}"
+            label="open to relocation or remote"
+        />
+    </div>
+</form>
 
 <main class="main">
     {#if filteredTalents && filteredTalents.length}
