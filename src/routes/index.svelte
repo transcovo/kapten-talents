@@ -26,6 +26,7 @@
     import Select from "../components/Select.svelte";
     import Checkbox from "../components/Checkbox.svelte";
     import TalentCard from "../components/TalentCard.svelte";
+    import EmptyList from "../components/EmptyList.svelte";
 
     export let talents;
 
@@ -51,8 +52,8 @@
     let filterBar;
     let header;
     let isFilterBarActive;
-    let isFilterBarAdditinnalContentVisible;
-    $: isFilterBarAdditinnalContentVisible =
+    let isFilterBarAdditionalContentVisible;
+    $: isFilterBarAdditionalContentVisible =
         isFilterBarActive && windowInnerWidth >= 1180;
 
     const KPI = {
@@ -381,7 +382,7 @@
     bind:this="{filterBar}"
 >
     <div class="filter-bar__block filter-bar__block--start">
-        {#if isFilterBarAdditinnalContentVisible}
+        {#if isFilterBarAdditionalContentVisible}
             <img class="logo logo--filter-bar" src="logo.svg" alt="Kapten" />
 
             <div class="select">
@@ -389,6 +390,7 @@
                     bind:value="{departmentSelectValue}"
                     name="department"
                     id="department"
+                    ariaLabel="Department"
                     on:change="{handleResetPosition}"
                 >
                     {#each departmentOptions as option (option.label)}
@@ -400,6 +402,7 @@
                 <Select
                     bind:value="{positionSelectValue}"
                     name="position"
+                    ariaLabel="Position"
                     id="position"
                 >
                     <option value="{allPositionsOption}">
@@ -416,6 +419,7 @@
             <Select
                 bind:value="{experienceSelectValue}"
                 name="experience"
+                ariaLabel="Experience"
                 id="filter-bar-experience"
             >
                 <option value="{allExperiencesOption}">
@@ -440,11 +444,17 @@
     </div>
 </form>
 
-<ul class="talent-list">
-    {#each filteredTalents as talent (talent.id)}
-        <TalentCard {talent} />
-    {/each}
-</ul>
+<main class="main">
+    {#if filteredTalents && filteredTalents.length}
+        <ul class="talent-list">
+            {#each filteredTalents as talent (talent.id)}
+                <TalentCard {talent} />
+            {/each}
+        </ul>
+    {:else}
+        <EmptyList />
+    {/if}
+</main>
 
 <style>
     .underscore::after {
@@ -545,10 +555,17 @@
     .talent-list {
         list-style: none;
         margin: 0;
-        padding: 1.5rem;
+        padding: 0;
         display: grid;
         grid-template: auto / 1fr;
         grid-gap: 1.5rem 1rem;
+    }
+
+    .main {
+        padding: 1.5rem;
+        display: flex;
+        flex: 1;
+        flex-direction: column;
     }
 
     @media screen and (min-width: 768px) {
