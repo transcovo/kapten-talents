@@ -1,9 +1,9 @@
 {
     "background_color": "#ffffff",
-    "theme_color": "#333333",
-    "name": "kapten-talent",
-    "short_name": "kapten-talent",
-    "display": "minimal-ui",
+    "theme_color": "#002B51",
+    "name": "Kapten Talents",
+    "short_name": "Kapten Talents",
+    "display": "fullscreen",
     "start_url": "/",
     "icons": [
         {
