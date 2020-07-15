@@ -6,11 +6,17 @@
 
 body {
     margin: 0;
-    font-family: Gilroy, Helvetica, Arial, sans-serif;
     font-size: 1rem;
     line-height: 1.5;
     color: #002b51;
     background: #f1f7fb;
+}
+
+body,
+input,
+select,
+textarea {
+    font-family: Gilroy, Helvetica, Arial, sans-serif;
 }
 
 h1,

@@ -60,7 +60,7 @@
         [allDepartmentsOption]: {
             title: "We’re on fire(d)",
             description:
-                "We all grew and boosted growth tremendously. For some of us, it’s the end of the journey, but the beginning of yours!  Might just be your best decision of today."
+                "We all grew and boosted growth tremendously. For some of us, it’s the end of the journey, but the beginning of yours!  Might just be your best decision today."
         },
         Engineering: {
             title: "Our Tech team is awesome",
@@ -257,7 +257,20 @@
         );
 
         return {
-            EXPERIENCE: experiences.sort(),
+            EXPERIENCE: experiences.sort((a, b) => {
+                const firstValue = a.match(/\d+/g);
+                const secondValue = b.match(/\d+/g);
+
+                // if same first match, try to compare second one (fallback to first one if does not exist);
+                if (firstValue[0] === secondValue[0]) {
+                    return (
+                        (firstValue[1] || firstValue[0]) -
+                        (secondValue[1] || secondValue[0])
+                    );
+                }
+
+                return firstValue[0] - secondValue[0];
+            }),
             DEPARTMENTS: departments
         };
     }
@@ -314,11 +327,6 @@
 </script>
 
 <svelte:window bind:innerWidth="{windowInnerWidth}" />
-
-<svelte:head>
-    <title>Kapten's Talent Directory</title>
-    <meta name="description" content="Their talent helped move the world" />
-</svelte:head>
 
 <div class="banner" bind:this="{header}">
     <img

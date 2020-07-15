@@ -17,7 +17,7 @@ export default [
         id: "5f044082ca2759f73ba0a9d3",
         fullName: "Mejia Swanson",
         position: "Fullstack Developer",
-        experience: "> 10 years",
+        experience: "+10 years",
         tags: ["incididunt", "et"],
         introduction:
             "Cillum fugiat cillum adipisicing sit quis consequat aliqua. Mollit laboris duis elit culpa consectetur elit quis ea elit dolore. Do nulla quis ea reprehenderit eiusmod nulla eiusmod in eu do consectetur velit. Non sint sint amet sit id anim reprehenderit deserunt labore sint cillum. Amet nulla anim elit enim sint in elit excepteur Lorem. Irure culpa reprehenderit pariatur et occaecat eiusmod irure velit pariatur.",
@@ -59,7 +59,7 @@ export default [
         id: "5f04408294aebb5fb3daf71a",
         fullName: "Fitzpatrick Duran",
         position: "Fullstack Developer",
-        experience: "> 10 years",
+        experience: "+10 years",
         tags: ["voluptate", "officia", "eu"],
         introduction:
             "Eu quis consequat magna aute eiusmod pariatur culpa nostrud est in sunt esse eu ex. Ipsum et velit nisi quis adipisicing elit veniam consectetur commodo. Exercitation magna veniam qui Lorem anim elit nostrud esse mollit ut sunt labore reprehenderit.",
@@ -88,7 +88,7 @@ export default [
         id: "5f04408274a58e3e985c5212",
         fullName: "Christian Burt",
         position: "Data Engineer",
-        experience: "> 10 years",
+        experience: "+10 years",
         tags: ["voluptate"],
         introduction:
             "Eu sint laborum reprehenderit ea laboris culpa veniam amet sit ea ut. Sunt veniam quis culpa tempor laboris tempor occaecat velit deserunt. In ex commodo nisi ad ipsum commodo deserunt irure ea duis veniam proident consectetur ullamco. Esse cillum reprehenderit fugiat velit commodo mollit proident cupidatat. Quis eu nostrud nostrud exercitation deserunt deserunt tempor veniam proident et mollit sunt magna anim. Dolor mollit ipsum anim labore veniam nisi et non ea proident voluptate anim.",
@@ -235,7 +235,7 @@ export default [
         id: "5f044082680c9f49d3aad91e",
         fullName: "Samantha Hardin",
         position: "Frontend Developer",
-        experience: "> 10 years",
+        experience: "+10 years",
         tags: ["aliqua"],
         introduction:
             "Laboris sunt exercitation dolore aliqua duis culpa id ea culpa sit pariatur. Nulla ut ea consectetur enim dolor eiusmod reprehenderit. In non sunt nulla commodo commodo ipsum mollit culpa ad adipisicing tempor mollit et. Dolore est veniam eu nostrud nulla est veniam et ipsum duis et eiusmod ex.",
@@ -349,7 +349,7 @@ export default [
         id: "5f04408247c5d010fea3e433",
         fullName: "Luann Hines",
         position: "Lead Product Manager",
-        experience: "> 10 years",
+        experience: "+10 years",
         tags: ["proident"],
         introduction:
             "Adipisicing in nostrud exercitation consectetur nisi. Proident est magna sunt do consequat labore nulla esse amet. Excepteur consectetur do sit proident non aute proident non esse consequat in aliquip exercitation laboris. Non nulla nulla voluptate consectetur quis magna consequat consectetur ad cupidatat non.",
@@ -378,7 +378,7 @@ export default [
         id: "5f044082af6a62b4733ecd95",
         fullName: "Johns Montoya",
         position: "Lead Product Specialist",
-        experience: "> 10 years",
+        experience: "+10 years",
         tags: ["sint", "minim", "Lorem", "quis", "ad"],
         introduction:
             "Mollit elit esse ea occaecat fugiat mollit sit eu tempor enim nisi anim. Amet pariatur cupidatat excepteur cupidatat ut velit consectetur consectetur magna culpa esse magna. Ad aliqua id consectetur commodo. Mollit elit ad adipisicing non incididunt. Quis sit cupidatat esse consectetur aute. Ad labore proident ea esse cillum ut laborum.",
@@ -420,7 +420,7 @@ export default [
         id: "5f044082a3a1bf4423c5b8eb",
         fullName: "John Freeman",
         position: "Operations Project Manager",
-        experience: "> 10 years",
+        experience: "+10 years",
         tags: ["elit", "velit", "consectetur", "magna"],
         introduction:
             "Labore ad nostrud irure esse in excepteur. Consectetur dolor minim Lorem irure quis esse anim. Ad sit elit sint cillum occaecat anim labore reprehenderit aute cillum. Duis in consectetur in pariatur ut ea sit sunt occaecat. Sit occaecat sunt pariatur enim officia commodo reprehenderit laborum dolor culpa dolor sint laborum. Voluptate ex consequat consequat minim Lorem. Elit adipisicing cupidatat voluptate ad velit consectetur est est ipsum velit minim velit aliquip.",
@@ -450,7 +450,7 @@ export default [
         id: "5f044082ee6c4479b981712e",
         fullName: "Randall Lynn",
         position: "Product Design Manager",
-        experience: "> 10 years",
+        experience: "+10 years",
         tags: ["aliqua", "dolore", "officia", "ea", "consectetur"],
         introduction:
             "Occaecat elit pariatur laboris laborum anim aliqua. Commodo id anim voluptate labore ut cupidatat consequat ad. Irure est aute occaecat Lorem occaecat. Mollit tempor duis anim aute labore in consequat eiusmod occaecat incididunt eiusmod pariatur officia. Incididunt est ipsum labore velit ipsum sit dolore in veniam laborum exercitation. Sit velit Lorem ipsum sunt ullamco occaecat occaecat esse voluptate tempor Lorem.",
@@ -479,7 +479,7 @@ export default [
         id: "5f044082a66d2a5fdd5552a0",
         fullName: "Bruce Gilbert",
         position: "Lead Developer",
-        experience: "> 10 years",
+        experience: "+10 years",
         tags: ["ullamco", "reprehenderit"],
         introduction:
             "Amet ad aliqua nulla elit enim deserunt voluptate ullamco occaecat eiusmod excepteur aute culpa anim. Voluptate eu cillum sint fugiat duis voluptate deserunt culpa proident Lorem est eiusmod officia tempor. Dolore aliquip veniam minim nulla eu voluptate deserunt occaecat Lorem cillum. Eiusmod in occaecat voluptate labore.",
@@ -537,7 +537,7 @@ export default [
         id: "5f044082ee8965bd44161b29",
         fullName: "Justice Lawson",
         position: "Fullstack Developer",
-        experience: "> 10 years",
+        experience: "+10 years",
         tags: ["laboris"],
         introduction:
             "Ipsum deserunt eiusmod quis cillum sint ut officia tempor eu laborum tempor. Id dolore dolore est officia eiusmod. Amet ipsum laborum tempor laboris voluptate magna aute id eiusmod.",
@@ -552,7 +552,7 @@ export default [
         id: "5f044082642d4e915c2aceca",
         fullName: "Boyer Gates",
         position: "Product Specialist",
-        experience: "> 10 years",
+        experience: "+10 years",
         tags: ["reprehenderit", "nostrud", "adipisicing"],
         introduction:
             "Culpa cupidatat quis Lorem fugiat id pariatur ullamco. Voluptate ullamco aute veniam nisi amet. Dolor officia irure veniam dolore. Pariatur exercitation mollit eiusmod dolore mollit veniam consequat minim elit ad magna cillum.",
@@ -566,7 +566,7 @@ export default [
         id: "5f044082234bd1dacf7ad507",
         fullName: "Delacruz Gomez",
         position: "Product Specialist",
-        experience: "> 10 years",
+        experience: "+10 years",
         tags: ["incididunt", "non", "sint", "incididunt"],
         introduction:
             "Sint aute eiusmod sunt ut labore minim mollit laboris sint dolor quis nostrud. Ea id cupidatat cillum ipsum officia consectetur elit. Veniam fugiat velit cupidatat sit excepteur ad veniam mollit cillum dolor cillum laboris do. Deserunt aute ipsum est do aute occaecat quis ut tempor in cupidatat sint officia elit. Velit esse commodo exercitation ad aute nisi cupidatat sunt sit incididunt exercitation esse mollit.",
@@ -653,7 +653,7 @@ export default [
         id: "5f0440825acf57e1df9e6d48",
         fullName: "Elvira Rocha",
         position: "Lead Analytics",
-        experience: "> 10 years",
+        experience: "+10 years",
         tags: ["elit", "id", "aliqua", "proident", "consequat"],
         introduction:
             "Proident minim aliqua nostrud veniam excepteur veniam proident culpa nostrud cupidatat veniam aliquip. Cupidatat velit amet consequat laboris sint officia occaecat mollit voluptate exercitation incididunt do. Culpa reprehenderit consequat fugiat ullamco et magna mollit.",
@@ -667,7 +667,7 @@ export default [
         id: "5f04408243dc1bc477bb4f7e",
         fullName: "Ronda Anthony",
         position: "Talent Development Manager",
-        experience: "> 10 years",
+        experience: "+10 years",
         tags: ["reprehenderit", "officia", "anim", "exercitation", "velit"],
         introduction:
             "Irure commodo aliquip ipsum ipsum incididunt cillum in nostrud laborum sint dolor aliquip veniam incididunt. Ullamco sunt irure nisi cillum pariatur esse aliquip anim adipisicing esse adipisicing sint. Est irure aute velit dolor. Nostrud minim occaecat ea ad quis fugiat consequat. Sint nostrud ullamco sunt duis ea. Eu sunt ex pariatur sint duis nostrud laboris.",
@@ -768,7 +768,7 @@ export default [
         id: "5f044082119f49cdd3009a9f",
         fullName: "Nichols Hunt",
         position: "Customer Agent",
-        experience: "> 10 years",
+        experience: "+10 years",
         tags: ["occaecat", "sint"],
         introduction:
             "Aliquip id incididunt ut quis cupidatat culpa consequat nisi deserunt labore. Officia est et enim tempor laborum consequat dolore Lorem culpa ea anim sint mollit sit. Anim laborum voluptate dolore commodo veniam pariatur nostrud. Irure irure est enim occaecat esse cupidatat incididunt minim non exercitation ea adipisicing in. Anim ex nostrud ad ullamco nisi ea id pariatur duis voluptate proident. Nostrud officia excepteur ea consectetur est qui deserunt in. Labore magna quis culpa dolore.",
@@ -826,7 +826,7 @@ export default [
         id: "5f04408299cf958fb23197e8",
         fullName: "Hampton Parks",
         position: "Lead Data Scientist",
-        experience: "> 10 years",
+        experience: "+10 years",
         tags: ["magna", "magna", "officia"],
         introduction:
             "Velit laborum Lorem elit duis dolore esse amet sunt qui voluptate. Irure laboris dolor ut incididunt esse sunt enim laboris exercitation velit non. Veniam dolore ut pariatur pariatur irure nostrud consectetur ipsum tempor do officia reprehenderit irure id. Occaecat eiusmod elit velit est consequat mollit tempor sunt. Eiusmod sit aute tempor magna aute veniam reprehenderit. Mollit cupidatat laborum ex cupidatat ut proident est fugiat ex ex duis.",
@@ -840,7 +840,7 @@ export default [
         id: "5f0440822dc60bcc70e23846",
         fullName: "Huffman Murray",
         position: "Technical recruiter",
-        experience: "> 10 years",
+        experience: "+10 years",
         tags: ["cillum", "et"],
         introduction:
             "Ex excepteur quis deserunt ipsum adipisicing anim mollit ex exercitation exercitation laboris commodo. Ex Lorem cillum cupidatat non fugiat culpa. Adipisicing officia enim do pariatur dolore consectetur occaecat adipisicing incididunt aliquip velit cupidatat. Quis reprehenderit excepteur veniam incididunt reprehenderit minim eiusmod in mollit qui laborum. Tempor voluptate laborum quis velit anim ut sint officia aliqua ea occaecat deserunt. Sit consectetur cupidatat sunt elit in sit sint enim dolor irure irure. Aute in dolor laborum deserunt velit.",
@@ -1039,7 +1039,7 @@ export default [
         id: "5f044082b5eb125c5f8027ba",
         fullName: "Heather Fox",
         position: "Brand Manager",
-        experience: "> 10 years",
+        experience: "+10 years",
         tags: ["deserunt", "sunt", "aute"],
         introduction:
             "Sunt ut dolore est elit adipisicing labore officia Lorem sint est consequat. Ea pariatur incididunt aliquip proident. Consequat tempor nulla ullamco veniam incididunt aliqua. Amet duis magna Lorem laborum. Ut esse ex ex aliquip anim.",
@@ -1125,7 +1125,7 @@ export default [
         id: "5f044082ae0d2d678c6f3bf9",
         fullName: "Maynard Orr",
         position: "Frontend Developer",
-        experience: "> 10 years",
+        experience: "+10 years",
         tags: ["eiusmod", "veniam", "deserunt"],
         introduction:
             "Fugiat in adipisicing pariatur amet irure ipsum. Officia sint sint ut nostrud ad amet excepteur nisi deserunt. Ea quis commodo pariatur id consequat pariatur. Officia ex consectetur commodo ex ad nulla enim. Officia nisi eiusmod ex occaecat nulla Lorem commodo voluptate. Nisi dolor nostrud ipsum aliquip ea.",
