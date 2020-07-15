@@ -1,16 +1,4 @@
 <script context="module">
-    function shuffle(array) {
-        let shuffledArray = [...array];
-        for (let i = shuffledArray.length - 1; i > 0; i--) {
-            let j = Math.floor(Math.random() * (i + 1));
-            [shuffledArray[i], shuffledArray[j]] = [
-                shuffledArray[j],
-                shuffledArray[i]
-            ];
-        }
-        return shuffledArray;
-    }
-
     export function preload(page, session) {
         return this.fetch(`index.json`)
             .then(r => r.json())
@@ -29,6 +17,20 @@
     import EmptyList from "../components/EmptyList.svelte";
 
     export let talents;
+
+    function shuffle(array) {
+        let shuffledArray = [...array];
+        for (let i = shuffledArray.length - 1; i > 0; i--) {
+            let j = Math.floor(Math.random() * (i + 1));
+            [shuffledArray[i], shuffledArray[j]] = [
+                shuffledArray[j],
+                shuffledArray[i]
+            ];
+        }
+        return shuffledArray;
+    }
+
+    talents = shuffle(talents);
 
     let filteredTalents = talents;
 
