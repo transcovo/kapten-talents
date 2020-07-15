@@ -1,0 +1,20 @@
+{
+    "background_color": "#ffffff",
+    "theme_color": "#002B51",
+    "name": "Kapten Talents",
+    "short_name": "Kapten Talents",
+    "display": "fullscreen",
+    "start_url": "/",
+    "icons": [
+        {
+            "src": "logo-192.png",
+            "sizes": "192x192",
+            "type": "image/png"
+        },
+        {
+            "src": "logo-512.png",
+            "sizes": "512x512",
+            "type": "image/png"
+        }
+    ]
+}

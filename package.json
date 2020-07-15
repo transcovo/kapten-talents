@@ -4,7 +4,7 @@
     "scripts": {
         "dev": "sapper dev",
         "build": "sapper build",
-        "deploy": "scripts/deploy.sh",
+        "deploy": "sh scripts/deploy.sh",
         "export": "sapper export",
         "start": "node __sapper__/build",
         "cy:run": "cypress run",
