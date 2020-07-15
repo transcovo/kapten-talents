@@ -1,4 +1,4 @@
-const talents = [
+export default [
     {
         id: "5f04408268b47f4d24669b67",
         fullName: "Mckay Dillon",
@@ -1437,5 +1437,3 @@ const talents = [
         personalWebsite: "https://github.com/TristanBlg",
     },
 ];
-
-export default talents;
