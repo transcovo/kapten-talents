@@ -60,9 +60,23 @@
 
     const KPI = {
         [allDepartmentsOption]: {
-            title: "We’re on fire(d)",
+            title: "Might just be your best decision today",
             description:
-                "We all grew and boosted growth tremendously. For some of us, it’s the end of the journey, but the beginning of yours!  Might just be your best decision today."
+                "For some of us, it’s the end of the journey but the beginning of yours ! For 8 years, our Tech, HR, Product teams helped moved Kapten from nothing to a major actor in Europe. Discover some of the talents that made this success possible.",
+            kpi: [
+                {
+                    value: "3M",
+                    label: "Active users"
+                },
+                {
+                    value: "6",
+                    label: "European cities"
+                },
+                {
+                    value: "40K",
+                    label: "Partner drivers"
+                }
+            ]
         },
         Engineering: {
             title: "Our Tech team is awesome",
