@@ -1,5 +1,5 @@
 <div class="container">
-    <p class="title">We din’t find any match 🔎</p>
+    <p class="title">We didn’t find any match 🔎</p>
     <p class="text">You can try removing a filter to broaden your search</p>
 </div>
 
