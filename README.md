@@ -26,12 +26,20 @@ Run the following command to update the static code in `docs/`:
 npm run deploy
 ```
 
+⚠️ **Please, test before pushing to master** ⚠️
+
+```shell
+npx serve docs
+```
+
 Then you can check, commit and push:
 
 ```shell
 git add docs/
 
-git commit -m "TECH Free the starts"
+git commit -m "TECH release"
+
+npm version minor
 
 git push
 ```
