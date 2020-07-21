@@ -173,7 +173,7 @@
                 }
             ]
         },
-        "Human Resources": {
+        "Human Ressources": {
             title: "Our HR team is incredible",
             description:
                 "Here are some a glimpse of their biggest successes. Discover who they are below 👇",
