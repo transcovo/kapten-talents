@@ -402,21 +402,6 @@ export default [
         department: "Engineering",
     },
     {
-        id: "jtuowv7wy4nw04rwamjtuow0cxppj375",
-        fullName: "Aya E.",
-        position: "Data Analyst",
-        experience: "1 - 3 years",
-        tags: ["Python", "SQL", "R", "Machine Learning"],
-        location: "Paris",
-        isOpenToRelocationOrRemote: false,
-        introduction:
-            "Experienced Data Analyst with an appetite for machine learning",
-        linkedin: "https://www.linkedin.com/in/ayaesaki/",
-        github: "",
-        personalWebsite: "",
-        department: "Engineering",
-    },
-    {
         id: "266qbgm2g20ykpqx3f9v3266q0bf4p9q",
         fullName: "Florent V.",
         position: "Fullstack Developer",
