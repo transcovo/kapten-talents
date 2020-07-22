@@ -827,7 +827,7 @@ export default [
         introduction:
             "Backend enthusiast, eager to tackle architecture and algorithmic challenges with great teammates!",
         linkedin: "https://fr.linkedin.com/in/nathan-irjud-306518a6",
-        github: "https://github.com/irjudn",
+        github: "",
         personalWebsite: "",
         department: "Engineering",
     },
