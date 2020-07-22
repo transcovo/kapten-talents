@@ -62,7 +62,7 @@
         [allDepartmentsOption]: {
             title: "Might just be your best decision today",
             description:
-                "For some of us, it’s the end of the journey but the beginning of yours ! For 8 years, our Tech, HR, Product, Customer Service teams helped moved Kapten from nothing to a major actor in Europe. Discover some of the talents that made this success possible.",
+                "For some of us, it’s the end of the journey but the beginning of yours! For 8 years, our Tech, HR, Product, Customer Service teams helped grow Kapten from nothing to a major actor in Europe. Discover some of the talents that made this success possible.",
             kpi: [
                 {
                     value: "3M",
