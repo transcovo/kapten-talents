@@ -312,21 +312,6 @@ export default [
         department: "Product",
     },
     {
-        id: "nn5qcv8fbyz3f0by7rnn5qcvuf93p55r",
-        fullName: "Aya E.",
-        position: "Data Analyst",
-        experience: "1 - 3 years",
-        tags: ["Python", "SQL", "R"],
-        location: "Paris",
-        isOpenToRelocationOrRemote: false,
-        introduction:
-            "Experienced Data Analyst with an appetite for machine learning",
-        linkedin: "https://www.linkedin.com/in/ayaesaki/",
-        github: "https://github.com/aya-e",
-        personalWebsite: "",
-        department: "Engineering",
-    },
-    {
         id: "cfxcz78c79i9151cfongt1sl96rmabck",
         fullName: "Razvan L.",
         position: "Backend Developer",
