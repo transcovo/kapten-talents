@@ -410,7 +410,7 @@ export default [
         location: "Paris",
         isOpenToRelocationOrRemote: false,
         introduction:
-            "Fullstack developer with a strong focus on building quality user interfaces using React",
+            "Fullstack developer with a strong focus on building quality user interfaces using React. Driven by challenge, I love my job as much as climbing mountains and surfing waves on my spare time 🤙🏼",
         linkedin: "https://fr.linkedin.com/in/florent-violin",
         github: "https://github.com/Flovln",
         personalWebsite: "",
