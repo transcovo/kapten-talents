@@ -540,11 +540,11 @@ export default [
         fullName: "Kristen L.",
         position: "Lead Developer",
         experience: "> 10 years",
-        tags: ["Node.js", "AWS", "React"],
+        tags: ["Engineering", "Management", "Product driven"],
         location: "Paris",
         isOpenToRelocationOrRemote: true,
         introduction:
-            "Squad lead with a strong xp in development, training, algorithms and problem solving.",
+            "Squad lead with a strong experience in development, training, algorithms and problem solving.",
         linkedin: "https://www.linkedin.com/mwlite/in/kristenleliboux",
         github: "",
         personalWebsite: "",
