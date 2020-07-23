@@ -1,6 +1,6 @@
 {
     "name": "kapten-talents",
-    "version": "1.3.0",
+    "version": "1.3.1",
     "scripts": {
         "dev": "sapper dev",
         "build": "sapper build",
