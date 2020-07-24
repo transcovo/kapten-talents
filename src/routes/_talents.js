@@ -243,7 +243,7 @@ export default [
         experience: "3 - 5 years",
         tags: ["Node.js", "Python", "Go"],
         location: "Paris",
-        isOpenToRelocationOrRemote: false,
+        isOpenToRelocationOrRemote: true,
         introduction:
             "Curious and passionate back-end developer with experience in IoT and building scalable and resilient services. I am looking for a new exciting challenge in a growing company with a real world impact.",
         linkedin: "https://www.linkedin.com/in/olivierdaire/",
