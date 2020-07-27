@@ -1075,7 +1075,7 @@ export default [
         location: "Paris",
         isOpenToRelocationOrRemote: true,
         introduction:
-            "Building great product in fast paced environments. Looking for a CTO or VP engineering position.",
+            "Building great product with great people in fast paced environments. Looking for a CTO or VP engineering position.",
         linkedin: "https://www.linkedin.com/in/jypoilleux/",
         github: "",
         personalWebsite: "",
