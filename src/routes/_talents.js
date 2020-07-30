@@ -216,7 +216,7 @@ export default [
         location: "Paris",
         isOpenToRelocationOrRemote: true,
         introduction:
-            "Backend engineer, DDD and hexagonal architecture lover. Love solving problems. Curious about everything about computer programming.",
+            "Backend engineer, DDD and hexagonal architecture lover. Love solving problems. Curious about everything about computer programming. Look for freelance jobs 🙏",
         linkedin: "https://www.linkedin.com/in/remygouello/",
         github: "https://github.com/KinderGouello",
         personalWebsite: "",
