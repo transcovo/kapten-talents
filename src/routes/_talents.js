@@ -252,21 +252,6 @@ export default [
         department: "Engineering",
     },
     {
-        id: "5wlwbiryu2o9kbgt3s07n5wlw9qgfyan",
-        fullName: "Axel V.",
-        position: "Backend Developer",
-        experience: "1 - 3 years",
-        tags: ["Payment Architecture", "Node.js", "Kotlin"],
-        location: "Paris",
-        isOpenToRelocationOrRemote: true,
-        introduction:
-            "Payment Back-End developer, looking for small/mid size company on a Full Stack role, knowledge in statistics and data visualisation",
-        linkedin: "https://www.linkedin.com/in/axel-vincent/",
-        github: "",
-        personalWebsite: "",
-        department: "Engineering",
-    },
-    {
         id: "hl4840cna4y7g6rhhl4840x3s64pfu02",
         fullName: "Antonin B.",
         position: "Backend Developer",
