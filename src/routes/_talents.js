@@ -237,21 +237,6 @@ export default [
         department: "Engineering",
     },
     {
-        id: "cre5zkb3lc0hicre5zklx7g0msybrwbj",
-        fullName: "Olivier D.",
-        position: "Backend Developer",
-        experience: "3 - 5 years",
-        tags: ["Node.js", "Python", "Go"],
-        location: "Paris",
-        isOpenToRelocationOrRemote: true,
-        introduction:
-            "Curious and passionate back-end developer with experience in IoT and building scalable and resilient services. I am looking for a new exciting challenge in a growing company with a real world impact.",
-        linkedin: "https://www.linkedin.com/in/olivierdaire/",
-        github: "https://github.com/Olivier-Daire",
-        personalWebsite: "",
-        department: "Engineering",
-    },
-    {
         id: "hl4840cna4y7g6rhhl4840x3s64pfu02",
         fullName: "Antonin B.",
         position: "Backend Developer",
