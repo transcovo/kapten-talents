@@ -118,22 +118,22 @@ export default [
     //     personalWebsite: "https://farzy.org",
     //     department: "Engineering",
     // },
-    {
-        id: "nzatjgzt4mt9wor7ynzatju7b391cqrk",
-        fullName: "Hélène D.",
-        position: "Lead Developer",
-        experience: "3 - 5 years",
-        tags: ["Node.js", "MongoDB"],
-        location: "Paris",
-        isOpenToRelocationOrRemote: true,
-        introduction:
-            "4 years as a Backend Developer and then as a Lead Developer, mainly in a Node.js environment, I am now highly motivated to find my next adventure in a company with which I share the values and that I can help grow.",
-        linkedin:
-            "https://www.linkedin.com/in/h%C3%A9l%C3%A8ne-droal-66703b60/",
-        github: "",
-        personalWebsite: "",
-        department: "Engineering",
-    },
+    // {
+    //     id: "nzatjgzt4mt9wor7ynzatju7b391cqrk",
+    //     fullName: "Hélène D.",
+    //     position: "Lead Developer",
+    //     experience: "3 - 5 years",
+    //     tags: ["Node.js", "MongoDB"],
+    //     location: "Paris",
+    //     isOpenToRelocationOrRemote: true,
+    //     introduction:
+    //         "4 years as a Backend Developer and then as a Lead Developer, mainly in a Node.js environment, I am now highly motivated to find my next adventure in a company with which I share the values and that I can help grow.",
+    //     linkedin:
+    //         "https://www.linkedin.com/in/h%C3%A9l%C3%A8ne-droal-66703b60/",
+    //     github: "",
+    //     personalWebsite: "",
+    //     department: "Engineering",
+    // },
     {
         id: "7u4p33ot5oq4dijz8a8lc87u4p333a1f",
         fullName: "Jean-Guillaume B.",
