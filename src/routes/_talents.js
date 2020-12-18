@@ -15,21 +15,6 @@ export default [
         department: "Engineering",
     },
     {
-        id: "vhn5kbrj7evswv75dh3zohwc3p8c8x17",
-        fullName: "Charujan T.",
-        position: "Fullstack Developer",
-        experience: "3 - 5 years",
-        tags: ["Node.js", "TypeScript", "Kotlin"],
-        location: "Paris",
-        isOpenToRelocationOrRemote: false,
-        introduction:
-            "Fullstack Developer (backend oriented) with good knowledge on the payment domain.",
-        linkedin: "https://www.linkedin.com/in/charujan-thavendran-03b870a5/",
-        github: "",
-        personalWebsite: "",
-        department: "Engineering",
-    },
-    {
         id: "vkn4x3v558dsg1n0w21vkn4x475dd497",
         fullName: "Abdelhakim B.",
         position: "Data Scientist/Software Engineer",
