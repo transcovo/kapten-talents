@@ -1,19 +1,19 @@
 export default [
-    {
-        id: "umvl9mmtwdcwh8f1rpg94umvl9u2zrf8",
-        fullName: "Dmytro P.",
-        position: "Backend Developer",
-        experience: "5 - 10 years",
-        tags: ["Node.js", "TypeScript", "Kotlin"],
-        location: "Paris",
-        isOpenToRelocationOrRemote: true,
-        introduction:
-            "Seasoned backend developer, fluent in multiple languages and platforms, no stranger to the trending practices",
-        linkedin: "https://www.linkedin.com/in/dmytro-petrovych-74256153",
-        github: "https://github.com/dpetrovych",
-        personalWebsite: "",
-        department: "Engineering",
-    },
+    // {
+    //     id: "umvl9mmtwdcwh8f1rpg94umvl9u2zrf8",
+    //     fullName: "Dmytro P.",
+    //     position: "Backend Developer",
+    //     experience: "5 - 10 years",
+    //     tags: ["Node.js", "TypeScript", "Kotlin"],
+    //     location: "Paris",
+    //     isOpenToRelocationOrRemote: true,
+    //     introduction:
+    //         "Seasoned backend developer, fluent in multiple languages and platforms, no stranger to the trending practices",
+    //     linkedin: "https://www.linkedin.com/in/dmytro-petrovych-74256153",
+    //     github: "https://github.com/dpetrovych",
+    //     personalWebsite: "",
+    //     department: "Engineering",
+    // },
     {
         id: "vkn4x3v558dsg1n0w21vkn4x475dd497",
         fullName: "Abdelhakim B.",
